@@ -22,17 +22,17 @@ public interface QueueInterface {
     /**
      * return and remove first element.
      */
-    Object dequeue();
+    Object dequeue() throws IndexOutOfBoundsException;
 
     /**
      * return (without removing) first element
      */
-    Object first();
+    Object first() throws IndexOutOfBoundsException;
 
     /**
      * return (without removing) last element
      */
-    Object last();
+    Object last() throws IndexOutOfBoundsException;
 
     /**
      * return "true" if this queue contains the specified element

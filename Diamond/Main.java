@@ -27,18 +27,18 @@ public class Main {
         String myString = "";
 
         for (int i = 0; i < thickness; i++) {
-            if (i % 2 == 0) {
-                myString += asterisk;
-            }
-            else {
-                myString += "\n";
-            }
+
+            myString += new String(new char[(thickness - i) / 2]).replace("\0", " ");
+
+            myString += i % 2 == 0 ? asterisk : "\n";
 
             for (int x = 0; x < i; x++) {
                 if (i % 2 == 0) {
                     myString += asterisk;
                 }
             }
+
+            // We already has the top of the diamond, so just reverse it.
             if (i % 2 == 0 && i == thickness - 1) {
                 List<String> myStrings = new ArrayList<>();
                 String old = myString;

@@ -21,5 +21,10 @@ public class QueueMain {
         for (Object i : queue) {
             System.out.println(i);
         }
+
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.last());
     }
 }

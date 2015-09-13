@@ -34,6 +34,9 @@ public class Queue implements QueueInterface, Iterable {
 
     @Override
     public Object dequeue() {
+        if (this.size() <= 0) {
+            throw new IndexOutOfBoundsException("Queue list cannot be empty!");
+        }
         Object tmp = this.first();
         head = head.next;
         this.size--;
@@ -42,11 +45,17 @@ public class Queue implements QueueInterface, Iterable {
 
     @Override
     public Object first() {
+        if (this.size() <= 0) {
+            throw new IndexOutOfBoundsException("Queue list cannot be empty!");
+        }
         return this.head.data;
     }
 
     @Override
     public Object last() {
+        if (this.size() <= 0) {
+            throw new IndexOutOfBoundsException("Queue list cannot be empty!");
+        }
         return this.tail.data;
     }
 
