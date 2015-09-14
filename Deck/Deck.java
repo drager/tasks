@@ -20,7 +20,14 @@ public class Deck {
         if (cards.size() != 52) {
             throw new IllegalStateException("Less than 52 cards left in the deck!");
         }
-        Collections.shuffle(cards);
+
+        for (int i = 0; i < 1017; i++)
+        {
+            int index = (int)(Math.random() * 171717.0) % cards.size();
+            Card c = cards.get(index);
+            cards.remove(index);
+            cards.add(c);
+        }
     }
 
     public Card handOutNextCard() {
